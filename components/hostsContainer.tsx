@@ -28,9 +28,7 @@ export default function HostsContainer({}: HostsContainerProps) {
   };
 
   useEffect(() => {
-    if (credentials !== null) {
-      getHostsFromServer();
-    }
+    getHostsFromServer();
   }, []);
 
   // if (credentials !== null) {
