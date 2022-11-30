@@ -11,12 +11,12 @@ export default function PrintersContainer({}: PrintersContainerProps) {
   const { printers, selectedHost, credentials } = store;
 
   let getPrinterFromServer = async () => {
+    console.log(selectedHost, "selectedHost");
     let response = await axios.get(
-      `https://observer.shopdash.de/hosts/${selectedHost?.id}/printers`
+      `https://observer.shopdash.de/hosts/${selectedHost.id}/printers`
       // `https://${credentials?.username}:${credentials?.password}@observer.shopdash.de/hosts/${selectedHost?.id}/printers`
     );
     console.log(response, "printers response");
-    console.log(selectedHost, "selectedHost");
     dispatch({
       type: types.setPrinters,
       payload: { printers: printers },
