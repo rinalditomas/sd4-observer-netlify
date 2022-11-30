@@ -31,33 +31,29 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const credentials = localStorage.getItem("sd4-observer-credentials");
-    console.log(credentials, ' credentials stored locally')
-    if (credentials === null) {
-      console.log('there are no credentials stored locally')
-      dispatch({
-        type: types.credentialModal,
-        payload: {
-          openClose: !openCredentialModal,
-        },
-      });
-    } else {
-      console.log("there are credentials stored locally");
 
-      let parsedCredentials = JSON.parse(credentials);
-      console.log(parsedCredentials, "parsed Credentials");
-      dispatch({
-        type: types.setCredentials,
-        payload: { parsedCredentials },
-      });
-    }
+    // const credentials = localStorage.getItem("sd4-observer-credentials");
+    // console.log(credentials, ' credentials stored locally')
+    // if (credentials === null) {
+    //   console.log('there are no credentials stored locally')
+    //   dispatch({
+    //     type: types.credentialModal,
+    //     payload: {
+    //       openClose: !openCredentialModal,
+    //     },
+    //   });
+    // } else {
+    //   console.log("there are credentials stored locally");
+    //   let parsedCredentials = JSON.parse(credentials);
+    //   console.log(parsedCredentials, "parsed Credentials");
+    //   dispatch({
+    //     type: types.setCredentials,
+    //     payload: { parsedCredentials },
+    //   });
+    // }
   }, []);
 
-  // const fetchDataFromApi = async () => {
-  //   let response = await axios.get(`https://${username}:${password}@observer.shopdash.de/printer_status`);
 
-  //   console.log(response.data);
-  // };
 
   console.log(store);
   return (

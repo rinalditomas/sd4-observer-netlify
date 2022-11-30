@@ -84,7 +84,7 @@ export default function CredentialsModal() {
                       let response = await axios.get(
                         `https://${credentials?.username}:${credentials?.password}@observer.shopdash.de/printer_status`
                       );
-                      console.log(response, "response to check if credentials are ok");
+                      
                       if (response.status === 401) {
                         setError("The credentials entered are not correct.");
                         console.log("the credentials where not right");
