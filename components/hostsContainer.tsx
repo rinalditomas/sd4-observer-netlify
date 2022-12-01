@@ -15,8 +15,8 @@ export default function HostsContainer({}: HostsContainerProps) {
 
   let getHostsFromServer = async () => {
     let response = await axios.get(
-      `https://observer.shopdash.de/hosts`
-      // `https://${credentials?.username}:${credentials?.password}@observer.shopdash.de/hosts`
+      // `https://observer.shopdash.de/hosts`
+      `https://${credentials?.username}:${credentials?.password}@observer.shopdash.de/hosts`
     );
 
     console.log(response, "host response");
